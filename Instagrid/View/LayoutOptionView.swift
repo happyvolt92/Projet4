@@ -59,7 +59,7 @@ class LayoutOptionView: UIView {
         }
     }
     
-    /// Behaviour of the windows for the differents frames on app's bottom (visibility changes when one is tapped)
+    /// Behaviour of the windows for the differents frames on app's bottom (visibility changes when one is tapped and the others are hidden)
     /// - Parameter style: Style's Type, reffers to enum Style in LayoutView
     func setLayoutStyle(style: Style) {
         switch style {

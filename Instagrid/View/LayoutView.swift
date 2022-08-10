@@ -10,24 +10,21 @@ import UIKit
 import Foundation
 
 
+/// Outlet and styles used for Layout Managemnt (view)
 class LayoutView: UIView {
-
-    // MARK: - Outlets
 
     @IBOutlet var layout1: UIView!
     @IBOutlet var layout2: UIView!
     @IBOutlet var layout3: UIView!
-
-    // MARK: - Property
 
     var style: Style = .layout1 {
         didSet {
             setStyle(style)
         }
     }
-
-    // MARK: - Function
     
+    /// set Styles (visibility) on frames
+    /// - Parameter style: Style Type
     func setStyle(_ style: Style) {
         switch style {
         case .layout1:
