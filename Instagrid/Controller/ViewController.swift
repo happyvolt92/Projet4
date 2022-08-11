@@ -209,15 +209,16 @@ class ViewController: UIViewController {
     }
 
     
-    /// Notification when share picture is done (UIAlertController)
+    /// Notification when share picture is done (UIAlertController) actually only when the action is done on interface
     private func successAlert() {
         let alert = UIAlertController(title: "Picture sent", message: "Amazing job Picasso !", preferredStyle: .alert)
         let action = UIAlertAction(title: "Great !", style: .default, handler: nil)
         alert.addAction(action)
+        // present is used whenever the notification/action is completed in program so user have an alert of what just happend
         present(alert, animated: true, completion: nil)
     }
     
-    ///  /// Notification to acces the user gallery  (UIAlertController, PHPhotoLibrary)
+    /// Notification to acces the user gallery  (UIAlertController, PHPhotoLibrary)
     private func accessAlert() {
         let alertController = UIAlertController(title: "Instagrid Notification", message: "We need access to your gallery", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action) in
@@ -228,9 +229,11 @@ class ViewController: UIViewController {
     
     /// If User denied the acces the first time ask him to do go to the settings and change the access
     private func needAccessAlert() {
+        //notification alert: user said no for autho
         let alertController = UIAlertController(title: "Authorization denied", message: "Go to Settings > Instagrid and grant access to your pictures to continue", preferredStyle: .alert)
+        //alert action possibility -> go to settings using URL
         alertController.addAction(UIAlertAction(title: "Settings", style: .default, handler: { (action) in
-            // Url for helping user and go to the app settings in Phone Settings
+            // Url settings provides the action: moving to app's settings screen
             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(settingsURL)
             }
@@ -251,11 +254,11 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
-        // change the content mode of the button's image:
+        // change the content mode of the button's image: scale the content to fill the size of the view
         selectedButton?.imageView?.contentMode = .scaleAspectFill
         // set chosen image in button's image:
         selectedButton?.setImage(image, for: .normal)
-        // then selectedButton value is passed as nil to avoid mistakes:
+        // then selectedButton value is passed as nil to avoid mistakes (it's default state of the button):
         selectedButton = nil
         // dissmiss th picker:
         picker.dismiss(animated: true)
