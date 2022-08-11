@@ -22,7 +22,7 @@ class LayoutOptionView: UIView {
     @IBOutlet var layoutThreeSelected: UIImageView!
 
     
-    /// Notifications are created and sent  whenever func are call
+    /// Broadcaster Notifications, Notifications are created and sent  whenever func are call
     /// - Parameters:
     ///   - key: Keys(type)
     ///   - value: Keys (type)
@@ -42,6 +42,7 @@ class LayoutOptionView: UIView {
     }
 
     /// Notify app when Switch is tapped between displays using key and value, style of the differents layout (small frames on bottom)
+    /// info: IBAction is a way to use code based on events related to storyboard objects.
     /// - Parameter sender: UIBUTTON
     @IBAction func selectLayout(_ sender: UIButton) {
         switch sender {

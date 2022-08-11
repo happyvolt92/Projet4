@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         createSwipeUpWithActionAndDirection()
         createSwipeLeftWithActionAndDirection()
 
-        // Notifications observer:
+       // Notification observer when view's loaded
         let name = Notification.Name(rawValue: "LayoutStyle")
         NotificationCenter.default.addObserver(self, selector: #selector(selectLayout(_:)), name: name, object: nil)
     }
@@ -239,13 +239,13 @@ class ViewController: UIViewController {
     }
 }
 
-
+// extension is an ability to add new type on this class. Retroactive modeling
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    /// <#Description#>
+    /// imagePickerController Tells the delegate that the user picked a still image
     /// - Parameters:
-    ///   - picker: <#picker description#>
-    ///   - info: <#info description#>
+    ///   - picker: UIImagePickerController
+    ///   - info:UIImagePickerController: view controller that manages the system interfaces for choosing items from the user's media library...
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey:Any]) {
         // check and unwrap the image chosen by the user:
         guard let image = info[.originalImage] as? UIImage else {
