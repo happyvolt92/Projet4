@@ -251,11 +251,11 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
-        // change the content mode of the button's image:
+        // change the content mode of the button's image: scale the content to fill the size of the view
         selectedButton?.imageView?.contentMode = .scaleAspectFill
         // set chosen image in button's image:
         selectedButton?.setImage(image, for: .normal)
-        // then selectedButton value is passed as nil to avoid mistakes:
+        // then selectedButton value is passed as nil to avoid mistakes (it's default state of the button):
         selectedButton = nil
         // dissmiss th picker:
         picker.dismiss(animated: true)
