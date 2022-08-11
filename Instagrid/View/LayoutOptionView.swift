@@ -32,7 +32,7 @@ class LayoutOptionView: UIView {
         NotificationCenter.default.post(notification)
     }
     
-    /// enum of words keys to call it later
+    /// enum of words keys to call the reference later
     private enum Keys: String {
         case layout1 = "layout1"
         case layout2 = "layout2"
