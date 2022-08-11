@@ -240,7 +240,7 @@ class ViewController: UIViewController {
         }))
         present(alertController, animated: true, completion: nil)
     }
-}
+} // end of class ViewController \\
 
 // extension is an ability to add new type on this class. Retroactive modeling
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
