@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     /// picker creation, gesture controller for tapped action
     /// - Parameter sender: UiButton
     @IBAction func buttonTapped(_ sender: UIButton) {
+        checkAuthorizationStatus()
         // selected button takes the sender as its value:
         selectedButton = sender
         // create a UIImagePickerController:
