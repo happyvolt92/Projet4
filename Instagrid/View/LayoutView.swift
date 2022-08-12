@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-
 /// Outlet and styles used for Layout Managemnt (view)
 class LayoutView: UIView {
 
@@ -23,7 +22,7 @@ class LayoutView: UIView {
         }
     }
     
-    /// set Styles (visibility) on frames
+    /// Apply set Styles (changes visibility) on frames
     /// - Parameter style: Style Type
     func setStyle(_ style: Style) {
         switch style {
