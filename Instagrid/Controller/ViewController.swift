@@ -52,14 +52,17 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         //whanever user wants to go to the picture library, we check the auth
         if checkAuthorizationStatus() == true {
-        // selected button takes the sender as its value:
-        selectedButton = sender
-        // create a UIImagePickerController:
-        let picker = UIImagePickerController()
-        // declare ViewController as picker's delegate :
-        picker.delegate = self
-        // display picker:
-        self.present(picker, animated: true)
+            // selected button takes the sender as its value:
+            selectedButton = sender
+            // create a UIImagePickerController:
+            let picker = UIImagePickerController()
+            // declare ViewController as picker's delegate :
+            picker.delegate = self
+            // display picker:
+            self.present(picker, animated: true)
+        }
+        else {
+            checkAuthorizationStatus()
         }
     }
 
@@ -126,7 +129,7 @@ class ViewController: UIViewController {
     /// Verification wich authorization status is actually stated with  switch
     /// - Returns: bool
     private func checkAuthorizationStatus() -> Bool {
-        //PHPhotoLibrary is An object that manages access and changes to the user’s photo library.
+        //observer is An object that manages access and changes to the user’s photo library.
         let readWriteStatus = PHPhotoLibrary.authorizationStatus()
         switch readWriteStatus {
         case .notDetermined:

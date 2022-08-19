@@ -2,9 +2,6 @@
 //  Instagrid
 //
 //  Created by Elodie Gage on 26/07/2022.
-//
-
-
 import UIKit
 
 /// enum for the 3 available display of frames = Layout
