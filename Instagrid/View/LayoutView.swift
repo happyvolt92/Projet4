@@ -1,5 +1,4 @@
 //
-//  ViewController.swift
 //  Instagrid
 //
 //  Created by Elodie Gage on 26/07/2022.
