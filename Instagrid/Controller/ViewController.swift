@@ -9,8 +9,6 @@
 import UIKit
 import Photos
 
-
-/// Main app hierarchy view management, UIViewController is able to contents of the views, Responding to user interactions with views...
 class ViewController: UIViewController {
 
     @IBOutlet weak var arrowImage: UIImageView!
@@ -52,7 +50,8 @@ class ViewController: UIViewController {
     /// picker creation, gesture controller for tapped action
     /// - Parameter sender: UiButton
     @IBAction func buttonTapped(_ sender: UIButton) {
-        checkAuthorizationStatus()
+        //whanever user wants to go to the picture library, we check the auth
+        if checkAuthorizationStatus() == true {
         // selected button takes the sender as its value:
         selectedButton = sender
         // create a UIImagePickerController:
@@ -61,6 +60,7 @@ class ViewController: UIViewController {
         picker.delegate = self
         // display picker:
         self.present(picker, animated: true)
+        }
     }
 
     // called when notification is observed, allows to display the correct layout from choosen style with a switch:
