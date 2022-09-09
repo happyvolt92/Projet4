@@ -179,9 +179,9 @@ class ViewController: UIViewController {
         if UIDevice.current.orientation.isPortrait {
             UIView.animate(withDuration: 0.5) {
                // Calculs for translation on Y for both swipelabel,layoutView and arrow:
-                let translationY = -(self.view.bounds.height/6 + self.layoutView.bounds.height/6)
-                let translationYLabel = -(self.view.bounds.height/6 + self.swipeLabel.bounds.height/6)
-                let translationYArrowImage = -(self.view.bounds.height/6 + self.arrowImage.bounds.height/6)
+                let translationY = -(self.view.bounds.height/2 + self.layoutView.bounds.height/2)
+                let translationYLabel = -(self.view.bounds.height/2 + self.swipeLabel.bounds.height/2)
+                let translationYArrowImage = -(self.view.bounds.height/2 + self.arrowImage.bounds.height/2)
                 // Init the translation:
                 self.layoutView.transform = CGAffineTransform(translationX: 0, y: translationY)
                 self.swipeLabel.transform = CGAffineTransform(translationX: 0, y: translationYLabel)
